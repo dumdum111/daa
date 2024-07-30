@@ -34,7 +34,6 @@ int main() {
     fgets(x, sizeof(x), stdin);
     printf("Enter the second string:\n");
     fgets(y, sizeof(y), stdin);
-    y[strcspn(y, "\n")] = '\0';
     int m = strlen(x), n = strlen(y);
     if(x[m - 1] == '\n') x[m - 1] = '\0';
     if(y[n - 1] == '\n') y[n - 1] = '\0';
