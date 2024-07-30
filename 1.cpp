@@ -13,15 +13,15 @@ int partition(int a[], int L, int R) {
     for (int j = L; j < R; j++) 
         if (a[j] <= a[R]) 
             swap(&a[++i], &a[j]);
-    swap(&a[i + 1], &a[R]);
-    return i + 1;
+    swap(&a[++i], &a[R]);
+    return i;
 }
 
 void quicksort(int a[], int L, int R) {
     if (L < R) {
-        int j = partition(a, L, R);
-        quicksort(a, L, j - 1);
-        quicksort(a, j + 1, R);
+        int pi = partition(a, L, R);
+        quicksort(a, L, pi - 1);
+        quicksort(a, pi + 1, R);
     }
 }
 
